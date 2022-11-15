@@ -1,0 +1,2 @@
+class TransactioReason < ApplicationRecord
+end
