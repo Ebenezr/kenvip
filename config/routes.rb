@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  resources :notifiables
+  resources :models_tbls
+  resources :models
+  resources :data_element_tbls
+  resources :other_locations
+  resources :suppliers
+  resources :manufactures
+  resources :maintaince_service_providers
+  resources :spare_part_categories
+  resources :roles
+  resources :products
+  resources :transactions
+  resources :clients
+  resources :locations
+  resources :spare_part_orders
+  resources :permissions_tbls
+  resources :users
   resources :location_product_counts
   resources :spare_part_orders_recieved_spare_part_types
   resources :role_has_permissions

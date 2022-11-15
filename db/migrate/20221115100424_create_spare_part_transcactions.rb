@@ -9,7 +9,7 @@ class CreateSparePartTranscactions < ActiveRecord::Migration[7.0]
       t.references :other_location, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.string :status
-      t.date :deleted-at
+      t.date :deleted
       t.integer :quantity
       t.references :spare_part_type, null: false, foreign_key: true
 

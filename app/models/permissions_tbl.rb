@@ -1,0 +1,2 @@
+class PermissionsTbl < ApplicationRecord
+end

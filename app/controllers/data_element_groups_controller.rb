@@ -3,7 +3,9 @@ class DataElementGroupsController < ApplicationController
 
   # GET /data_element_groups
   def index
-    @data_element_groups = DataElementGroup.all
+    # paginate
+    @data_element_groups = DataElementGroup.paginate(page: params[:page], per_page: 25)
+    # @data_element_groups = DataElementGroup.all
 
     render json: @data_element_groups
   end

@@ -1,0 +1,2 @@
+class MaintainceServiceProvider < ApplicationRecord
+end

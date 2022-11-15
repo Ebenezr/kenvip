@@ -1,0 +1,2 @@
+class SparePartOrder < ApplicationRecord
+end

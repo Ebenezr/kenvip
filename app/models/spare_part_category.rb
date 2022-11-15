@@ -1,0 +1,2 @@
+class SparePartCategory < ApplicationRecord
+end

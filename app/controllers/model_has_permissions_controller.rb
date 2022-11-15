@@ -46,6 +46,6 @@ class ModelHasPermissionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def model_has_permission_params
-      params.require(:model_has_permission).permit(:permission_id, :model_type, :model_id)
+      params.require(:model_has_permission).permit(:permission_tbl_id, :model_type, :model_id)
     end
 end

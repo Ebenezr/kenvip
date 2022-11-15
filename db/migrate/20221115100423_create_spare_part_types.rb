@@ -9,7 +9,7 @@ class CreateSparePartTypes < ActiveRecord::Migration[7.0]
       t.string :warranty_information
       t.references :maintaince_service_provider, null: false, foreign_key: true
       t.date :deleted_at
-      t.references :manufature, null: false, foreign_key: true
+      t.references :manufacture, null: false, foreign_key: true
       t.references :supplier, null: false, foreign_key: true
 
       t.timestamps
