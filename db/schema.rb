@@ -120,12 +120,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_133607) do
   end
 
   create_table "oath_access_tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "client_id", null: false
     t.string "name"
     t.string "scope"
     t.integer "revoked"
     t.date "expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_oath_access_tokens_on_client_id"
+    t.index ["user_id"], name: "index_oath_access_tokens_on_user_id"
   end
 
   create_table "oauth_personal_access_clients", force: :cascade do |t|
@@ -331,6 +335,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_133607) do
   add_foreign_key "model_has_roles", "models_tbls", column: "models_tbls_id"
   add_foreign_key "model_has_roles", "roles"
   add_foreign_key "notifications", "notifiables"
+  add_foreign_key "oath_access_tokens", "clients"
+  add_foreign_key "oath_access_tokens", "users"
   add_foreign_key "oauth_personal_access_clients", "clients"
   add_foreign_key "product_data_elements", "products"
   add_foreign_key "role_has_permissions", "permissions_tbls", column: "permissions_tbls_id"
